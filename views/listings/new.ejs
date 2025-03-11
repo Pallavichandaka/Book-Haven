@@ -1,0 +1,65 @@
+<% layout('/layouts/boilerplate') %>
+
+<body>
+    <h3>Create a New Listing</h3>
+    <form action="/listings" method="POST">
+        
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input 
+                type="text" 
+                id="title"
+                name="title" 
+                placeholder="Enter title"
+                required 
+                class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="author" class="form-label"><strong>Author:</strong></label>
+            <input type="text" id="author" name="author" placeholder="Enter author" required class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label"><strong>Description:</strong></label>
+            <textarea id="description" name="description" placeholder="Enter description" required class="form-control"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="category" class="form-label"><strong>Category:</strong></label>
+            <input type="text" id="category" name="category" placeholder="Enter category" required class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="publisher" class="form-label"><strong>Publisher:</strong></label>
+            <input type="text" id="publisher" name="publisher" placeholder="Enter publisher" required class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="publication_year" class="form-label"><strong>Publication Year:</strong></label>
+            <input type="number" id="publication_year" name="publication_year" placeholder="Enter year" required class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="stock" class="form-label"><strong>Stock:</strong></label>
+            <input type="number" id="stock" name="stock" placeholder="Enter stock quantity" required class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="language" class="form-label"><strong>Language:</strong></label>
+            <input type="text" id="language" name="language" placeholder="Enter language" required class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="price" class="form-label"><strong>Price (₹):</strong></label>
+            <input type="number" id="price" name="price" placeholder="Enter price" step="0.01" required class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="image" class="form-label"><strong>Image URL:</strong></label>
+            <input type="url" id="image" name="image" placeholder="Enter image URL" required class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-primary add-btn">Add Listing</button>
+    </form>
+</body>

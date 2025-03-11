@@ -1,0 +1,40 @@
+<% layout('/layouts/boilerplate') %>
+
+<div class="row mt-3">
+    <div class="col-md-10 offset-md-1">  <!-- Increased width -->
+        <h3>Listing Details</h3>
+
+    <div class="card p-3" style="max-width: 850px; margin: auto;"> <!-- Increased width -->
+            <div class="row g-0">
+            <!-- Image Section -->
+                <div class="col-md-4 d-flex align-items-center">
+                    <img src="<%= listing.image %>" class="card-img show-img" alt="listing_image" 
+                   style="max-width: 100%; height: auto; display: block; margin: auto;">
+                </div>
+
+                <!-- Details Section -->
+                <div class="col-md-8">
+              <div class="card-body">
+                    <p class="card-text" style="white-space: pre-wrap; margin-left: 15px;">
+             <b><strong>Title:</strong> <%= listing.title %></b> <br>
+             <strong>Author:</strong> <%= listing.author %> <br>
+             <strong>Description:</strong> <%= listing.description %> <br>
+            <strong>Category:</strong> <%= listing.category %> <br>
+            <strong>Publisher:</strong> <%= listing.publisher %> <br>
+             <strong>Price:</strong> ₹<%= listing.price.toLocaleString("en-IN") %> <br>
+             <strong>Publication Year:</strong> <%= listing.publication_year %> <br>
+            <strong>Stock:</strong> <%= listing.stock %> <br>
+              <strong>Language:</strong> <%= listing.language %> <br>
+                        </p>
+                </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    <a href="/listings/<%= listing._id %>/edit" class="btn btn-primary edit-btn">Edit this Listing</a>
+        <br><br>
+        <form action="/listings/<%= listing._id %>?_method=DELETE" method="POST">
+            <button class="btn btn-danger del-btn">Delete this listing</button>
+        </form>
+    </div>
+</div>
